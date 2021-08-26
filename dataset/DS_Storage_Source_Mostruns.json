@@ -1,0 +1,65 @@
+{
+	"name": "DS_Storage_Source_Mostruns",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_azblobstorage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"datasetfilename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().datasetfilename",
+					"type": "Expression"
+				},
+				"container": "root"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "R_Number",
+				"type": "String"
+			},
+			{
+				"name": "RepairNumber",
+				"type": "String"
+			},
+			{
+				"name": "Part#",
+				"type": "String"
+			},
+			{
+				"name": "Serial#",
+				"type": "String"
+			},
+			{
+				"name": "ProductType",
+				"type": "String"
+			},
+			{
+				"name": "Manufacturer",
+				"type": "String"
+			},
+			{
+				"name": "ProductDescription",
+				"type": "String"
+			},
+			{
+				"name": "Status",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
