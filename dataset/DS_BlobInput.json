@@ -1,0 +1,47 @@
+{
+	"name": "DS_BlobInput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_azblobstorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "root"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "batsman",
+				"type": "String"
+			},
+			{
+				"name": "total_runs",
+				"type": "String"
+			},
+			{
+				"name": "out",
+				"type": "String"
+			},
+			{
+				"name": "numberofballs",
+				"type": "String"
+			},
+			{
+				"name": "average",
+				"type": "String"
+			},
+			{
+				"name": "strikerate",
+				"type": "String"
+			}
+		]
+	}
+}
